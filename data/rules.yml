@@ -1,0 +1,8 @@
+version: "3.1"
+
+rules:
+
+- rule: Bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_i_am_a_bot
