@@ -1,5 +1,5 @@
 recipe: default.v1
-language: en
+language: vi
 
 pipeline:
   - name: vietnamese_tokenizer.VietnameseTokenizer
@@ -39,8 +39,10 @@ pipeline:
     use_regexes: True
       # use match word boundaries for lookup table
     "use_word_boundaries": True
+  - name: DucklingEntityExtractor
+    dimensions: ["email", "number"]
+    url: "http://localhost:8000"
   
-
 
 policies:
   - name: MemoizationPolicy
@@ -53,3 +55,5 @@ policies:
     core_fallback_threshold: 0.4
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
+
+

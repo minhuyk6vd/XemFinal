@@ -2,21 +2,56 @@ version: "3.1"
 
 nlu:
 
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+
 - intent: greet
   examples: |
     - Chào bạn
-    - Chào buổi sáng
     - Xin chào
     - Có ai ở đây không
     - Tôi cần giúp đỡ
-    - tôi cần giúp
     - hello
     - hi
-    - chào buổi trưa
-    - chào buổi chiều
-    - chào buổi tối
     - hey
     - này
+    - help
+    - giúp
+
+- intent: ask_price
+  examples: |
+    - thuê sân giá bao nhiêu?
+    - sân mini thuê mấy
+    - hỏi giá sân lớn
+    - hỏi giá sân nhỏ
+    - thuê trong 1 tiếng giá sao
+    - giá cả thế nào 
+    - tiền thuê bao nhiêu
+
+- intent: ask_bot_can_do
+  examples: |
+    - Bạn có thể làm gì?
+    - Bạn có thể giúp gì cho tôi
+    - Bạn hỗ trợ tôi được cái gì
+    - mày biết làm gì
+
+- intent: say_bye
+  examples: |
+    - bye
+    - pp
+    - tạm biệt
+    - bai
+
+- intent: ask_promotion
+  examples: |
+    - có ưu đãi gì không
+    - có chương trình khuyến mãi gì không
+    - có nhận quà không
+    - giảm giá gì không
+    - khuyến mại gì không
 
 - intent: bot_challenge
   examples: |
@@ -55,9 +90,9 @@ nlu:
     - Tôi muốn đặt ở sân [Thanh Minh](pitch_name)
     - Thuê ở sân [Hoà Bình](pitch_name)
     - Đá ở [Côn Đảo](pitch_name)
-    - Tôi muốn xem sân bóng [Mỹ Đình](pitch_name)
-    - coi sân bóng [Song Long](pitch_name)
-    - hỏi về sân bóng [Quốc Hiệp](pitch_name)
+    - Tôi muốn xem sân [Mỹ Đình](pitch_name)
+    - coi sân [Song Long](pitch_name)
+    - hỏi về sân [Quốc Hiệp](pitch_name)
     - xem sân [Huy Hoàng](pitch_name)
     - sân [Huy Hoàng](pitch_name)
     - sân [binh minh](pitch_name)
@@ -77,21 +112,12 @@ nlu:
 
 - intent: ask_pitch_by_location_with_entity
   examples: |
-    - Có sân nào gần [Quang Vinh](location) không
-    - [Quang Thị Lại](location) có sân nào không
-    - [Nam Kì Khởi Nghĩa](location) có sân nào hoạt động không
-    - [Nguyễn Hữu Thọ](location) có sân nào gần k
-    - sân bóng nào gần [Nguyễn Hữu Thọ](location)
-    - chỗ [Nguyễn Hữu Thọ](location)
-    - gần [Nguyễn Hữu Thọ](location)
-    - ở khu [Nguyễn Hữu Thọ](location)
-    - gần đường [Nguyễn Hữu Thọ](location)
-    - gần phường [Nguyễn Hữu Thọ](location)
-    - ở trong khu [Hoà Hải](location)
-    - ở quanh quanh [Nguyễn Hữu Thọ](location)
-    - ở đoạn [Nguyễn Hữu Thọ](location)
-    - khu vực [Hoà Hải](location)
-    - ở gần khu [Hoà Hải](location)
+    - gần [Quang Vinh](location) không
+    - quanh quanh [Hoà Hải](location)
+    - chỗ [Hoà Hải](location)
+    - thuê gần [Hoà Hải](location)
+
+
 
 - intent: ask_pitch_has_not_been_booked
   examples: |
@@ -108,17 +134,12 @@ nlu:
 
 - intent: ask_pitch_has_not_been_booked_with_entity
   examples: |
-    - tôi muốn xem sân còn trống ở [Nguyễn Hữu Thọ](location)?
-    - có sân nào chưa được đặt ở [Quang Vinh](location) không?
-    - còn sân nào chưa ai thuê ở [Quang Thị Lại](location) không?
-    - sân nào không ai đặt ở [Nam Kì Khởi Nghĩa](location)?
-    - tôi có thể thuê sân nào ở [Hoà Hải](location)?
-    - có sân nào trống không ở [Ngũ Hành Sơn](location)
-    - hiện tại có sân nào trống ở [Hoà Vang](location) không
-    - bây giờ có sân nào trống ở [Hoà Quý](location) không
-    - có sân nào đang còn trống ở [Liên Chiểu](location)
-    - có sân bóng đang chưa ai đặt ở [Cẩm Lệ](location)
-    - sân bóng còn trống ở [Cẩm Lệ](location)
+    - tôi muốn còn trống ở [Nguyễn Hữu Thọ](location)
+    - trống ở [Hoà Hải](location)
+    - chưa ai thuê ở [Hoà Hải](location)
+    - chưa ai đặt ở [Hoà Hải](location)
+    - sân nào còn trống ở [Hoà Hải](location)
+
 
 - intent: ask_shopping
   examples: |
@@ -193,6 +214,7 @@ nlu:
     - ời
     - ừ
     - um
+    - yes
 
 - intent: thanks
   examples: |
@@ -354,7 +376,6 @@ nlu:
     - giày
     - găng đấm boxing
     - bình lắc
-    - bóng
     
 - synonym: người máy
   examples: |
@@ -370,6 +391,7 @@ nlu:
     - tao
     - tui
     - ta
+    - t
     
 - synonym: xem
   examples: |
@@ -378,22 +400,23 @@ nlu:
     - thuê
     - tìm
 
-- synonym: bóng đá
-  examples: |
-    - banh
-    - bóng
-    - đá bóng
-    - đá banh
 
 - synonym: muốn
   examples: |
     - ưng
     - thích
 
-- synonym: địa chỉ
+- synounym: bạn
   examples: |
-    - khu vực
-    - nơi
-    - vùng
-    - chỗ
-    - khu
+    - you
+    - mày
+    - m
+
+- synounym: không
+  examples: |
+    - k
+    - hong
+    - ko
+    - kh
+
+

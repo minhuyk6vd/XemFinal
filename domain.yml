@@ -19,6 +19,10 @@ intents:
   - ask_products_best_seller
   - ask_products_by_category
   - ask_detail_category_product
+  - ask_price
+  - ask_bot_can_do
+  - ask_promotion
+  - say_bye
 
 
 entities:
@@ -76,6 +80,34 @@ slots:
 
 responses:
 
+  utter_out_of_scope:
+  - text: Xin lỗi, tôi không hiểu ý bạn
+
+  utter_please_rephrase:
+  - text: Xin lỗi, tôi không hiểu ý bạn, bạn nói rõ hơn được không?
+
+  utter_default:
+  - text: Xin lỗi, tôi không hiểu ý bạn, bạn nói rõ hơn được không?
+
+  utter_price:
+  - text: |
+          Giá thuê mỗi sân bóng giao động từ 150.000vnđ - 400.000vnđ tuỳ thời gian và loại sân, 
+          để biết thêm chi tiết bạn vui lòng click vào link này: http://localhost:8080/booking
+  
+  utter_promotion:
+  - text: Hiện tại chúng tôi có chương trình khuyến mãi rút thăm trực tiếp tại sân để nhận quà. 
+            Nhanh tay đặt sân để nhận quà nhé.  
+
+  utter_bot_can_do:
+  - text: Tôi có thể hỗ trợ bạn những việc sau đây 
+    buttons:
+      - title: "Xem thông tin sân bóng"
+        payload: '/ask_info_pitch'
+      - title: "Hỏi mua sản phẩm"
+        payload: '/ask_shopping'   
+      - title: "Xem dự báo thời tiết"
+        payload: '/ask_weather'   
+
   utter_greet:
   - text: Xin chào, bạn đang cần gì ạ?
     buttons:
@@ -107,7 +139,7 @@ responses:
   - text: Bạn muốn tìm sân bóng ở khu vực nào?
 
   utter_ask_want_to_find_by_location:
-  - text: Bạn có thể tìm sân bóng hiện còn trống theo khu vực, bạn có muốn tìm không?
+  - text: Bạn cũng có thể tìm sân bóng hiện còn trống theo khu vực
 
   utter_ask_want_to_help_more:
   - text: Bạn có muốn tôi giúp gì nữa không?
@@ -139,6 +171,9 @@ responses:
 
   utter_thanks_customer_after_help:
   - text: Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!
+
+  utter_bye:
+  - text: Tạm biệt và hẹn gặp lại! ^^
 
   utter_ask_more_weather:
   - text: Bạn có thể xem dự báo thời tiết vào ngày mai và ngày mốt

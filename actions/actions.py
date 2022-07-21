@@ -11,9 +11,14 @@ from sqlalchemy import null
 from weather import Weather
 from googletrans import Translator
 import re
+from rasa_sdk.events import UserUtteranceReverted
 
 
+
+
+# link_web = "https://project-football-pitch.herokuapp.com"
 link_web = "http://localhost:8080"
+
 translator = Translator()
 
 mydb = mysql.connector.connect(
@@ -27,7 +32,7 @@ list_name_pitch = list()
 
 list_location = list()
 
-list_product = ["giày","áo","quần","áo thun", "bộ quần áo", "găng đấm boxing", "bình lắc", "bóng"]
+list_product = ["giày","áo","quần","áo thun", "bộ quần áo", "găng đấm boxing", "bình lắc"]
 
 hom_nay = ["hôm nay", "bữa nay", "ngày nay", "nay"]
 ngay_mai = ["ngày mai", "mai"]
@@ -107,6 +112,24 @@ def create_data_location():
     # print(list_name_pitch)
     return []
 
+ACTION_DEFAULT_FALLBACK_NAME = "ACTION_DEFAULT_FALLBACK_NAME"
+class ActionDefaultFallback(Action):
+    """Executes the fallback action and goes back to the previous state
+    of the dialogue"""
+
+    def name(self) -> Text:
+        return ACTION_DEFAULT_FALLBACK_NAME
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template="my_custom_fallback_template")
+
+        # Revert user message which led to fallback.
+        return [UserUtteranceReverted()]
 
 class ActionShowLinkPitch(Action):
 

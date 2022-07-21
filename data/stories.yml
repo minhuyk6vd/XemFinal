@@ -7,6 +7,21 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: ask price
+  steps:
+  - intent: ask_price
+  - action: utter_price
+
+- story: ask promotion
+  steps:
+  - intent: ask_promotion
+  - action: utter_promotion
+
+- story: ask bot can do
+  steps:
+  - intent: ask_bot_can_do
+  - action: utter_bot_can_do
+
 - story: Ask info pitch
   steps:
   - intent: ask_info_pitch
@@ -51,6 +66,13 @@ stories:
   - action: utter_ask_want_to_find_by_location
   - intent: affirm
   - action: utter_ask_location_find_pitch_has_not_been_booked
+  - intent: ask_pitch_has_not_been_booked_with_entity
+    entities:
+    - location: Hoà Hải
+  - slot_was_set:
+    - location: Hoà Hải
+  - action: action_show_link_pitch_has_not_been_booked_with_entity
+  - action: utter_ask_want_to_help_more
 
 - story: The 3st options find pitch has not been booked - deny
   steps:
