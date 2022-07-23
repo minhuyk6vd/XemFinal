@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-buoi_trong_ngay",
+      "2": "I-buoi_trong_ngay",
+      "3": "L-buoi_trong_ngay",
+      "4": "U-buoi_trong_ngay",
+      "5": "B-location",
+      "6": "I-location",
+      "7": "L-location",
+      "8": "U-location",
+      "9": "B-pitch_name",
+      "10": "I-pitch_name",
+      "11": "L-pitch_name",
+      "12": "U-pitch_name",
+      "13": "B-product",
+      "14": "I-product",
+      "15": "L-product",
+      "16": "U-product",
+      "17": "B-thoi_gian_ngay",
+      "18": "I-thoi_gian_ngay",
+      "19": "L-thoi_gian_ngay",
+      "20": "U-thoi_gian_ngay",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-buoi_trong_ngay": 1,
+      "I-buoi_trong_ngay": 2,
+      "L-buoi_trong_ngay": 3,
+      "U-buoi_trong_ngay": 4,
+      "B-location": 5,
+      "I-location": 6,
+      "L-location": 7,
+      "U-location": 8,
+      "B-pitch_name": 9,
+      "I-pitch_name": 10,
+      "L-pitch_name": 11,
+      "U-pitch_name": 12,
+      "B-product": 13,
+      "I-product": 14,
+      "L-product": 15,
+      "U-product": 16,
+      "B-thoi_gian_ngay": 17,
+      "I-thoi_gian_ngay": 18,
+      "L-thoi_gian_ngay": 19,
+      "U-thoi_gian_ngay": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

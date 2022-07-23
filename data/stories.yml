@@ -11,11 +11,19 @@ stories:
   steps:
   - intent: ask_price
   - action: utter_price
+  - action: utter_ask_want_to_help_more
+
+- story: ask time ship product
+  steps:
+  - intent: ask_time_ship_product
+  - action: utter_time_ship_prodcut
+  - action: utter_ask_want_to_help_more
 
 - story: ask promotion
   steps:
   - intent: ask_promotion
   - action: utter_promotion
+  - action: utter_ask_want_to_help_more
 
 - story: ask bot can do
   steps:

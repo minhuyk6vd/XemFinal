@@ -53,6 +53,12 @@ nlu:
     - giảm giá gì không
     - khuyến mại gì không
 
+- intent: ask_time_ship_product
+  examples: |
+    - thời gian ship hàng 
+    - ship mấy ngày
+    - thời gian giao hàng
+
 - intent: bot_challenge
   examples: |
     - bạn là người hay máy
@@ -406,13 +412,13 @@ nlu:
     - ưng
     - thích
 
-- synounym: bạn
+- synonym: bạn
   examples: |
     - you
     - mày
     - m
 
-- synounym: không
+- synonym: không
   examples: |
     - k
     - hong

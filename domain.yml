@@ -23,6 +23,7 @@ intents:
   - ask_bot_can_do
   - ask_promotion
   - say_bye
+  - ask_time_ship_product
 
 
 entities:
@@ -97,6 +98,9 @@ responses:
   utter_promotion:
   - text: Hiện tại chúng tôi có chương trình khuyến mãi rút thăm trực tiếp tại sân để nhận quà. 
             Nhanh tay đặt sân để nhận quà nhé.  
+
+  utter_time_ship_prodcut:
+  - text: Thời gian giao hàng trong nội thành Đà Nẵng dự kiến từ 1-2 ngày, những khu vực khác từ 3-5 ngày.
 
   utter_bot_can_do:
   - text: Tôi có thể hỗ trợ bạn những việc sau đây 

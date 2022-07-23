@@ -4,14 +4,8 @@ language: vi
 pipeline:
   - name: vietnamese_tokenizer.VietnameseTokenizer
     tokenizer: underthesea
-#   - name: WhitespaceTokenizer
+  # - name: WhitespaceTokenizer
   - name: RegexFeaturizer
-    number_additional_patterns: 10
-  - name: "RegexFeaturizer"
-    # Text will be processed with case sensitive as default
-    "case_sensitive": True
-    # use match word boundaries for lookup table
-    "use_word_boundaries": True
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
@@ -21,27 +15,13 @@ pipeline:
   - name: DIETClassifier
     epochs: 100
     constrain_similarities: true
-    model_confidence: softmax
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
-    model_confidence: softmax
   - name: FallbackClassifier
-    threshold: 0.7
+    threshold: 0.5
     ambiguity_threshold: 0.1
-  - name: RegexEntityExtractor
-      # text will be processed with case insensitive as default
-    case_sensitive: False
-      # use lookup tables to extract entities
-    use_lookup_tables: True
-      # use regexes to extract entities
-    use_regexes: True
-      # use match word boundaries for lookup table
-    "use_word_boundaries": True
-  - name: DucklingEntityExtractor
-    dimensions: ["email", "number"]
-    url: "http://localhost:8000"
   
 
 policies:
